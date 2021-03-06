@@ -112,7 +112,6 @@ class ConvLSTMCell(nn.Module):
     def forward(self, input_tensor, cur_state):
         h_cur, c_cur = cur_state
         combined = torch.cat([input_tensor, h_cur], dim=1)  # concatenate along channel axis
-        #TODO if I understand correctly, there is no bias if self._normalize == False
         combined_conv = self.conv(combined)
         cc_i, cc_f, cc_o, cc_g = torch.split(combined_conv, self.hidden_dim, dim=1)
 
@@ -155,13 +154,10 @@ class RRN(nn.Module):
         self.im_h = im_h
         self.im_w = im_w
         self.conv_fusion = nn.Sequential(
-            #TODO add in all:
-            #W initializer for Conv2d: initializer=tf.contrib.layers.xavier_initializer_conv2d()
-            #bias initiaizlier for Conv2d: initializer=tf.constant_initializer(0.)
             nn.Conv2d(in_channels = embed_size+rnn_size+8, out_channels = mlp_dim, kernel_size=1, stride=1), #(1, 40, 40, 2008) -> shape=(1, 40, 40, 500) 
             nn.ReLU()
         )
-        self.ConvLSTM = ConvLSTMCell(500, 500, (1,1), True) #TODO update to parameters
+        self.ConvLSTM = ConvLSTMCell(500, 500, (1,1), True)
 
         self.conv_c5 = nn.Sequential(
             nn.Conv2d(in_channels = vf_dim, out_channels = mlp_dim, kernel_size=1, stride=1), #(1, 40, 40, 2048) -> shape=(1, 40, 40, 500) 
@@ -237,8 +233,7 @@ class LSTM_Model(nn.Module):
         embedded_seq = [self.embed(sentence_no_padding[:, :, n]) for n in range(number_of_words)]
 
         embedded_seq = torch.cat(embedded_seq) #(number_of_words, 1, 1000)
-        #embedded_seq = embedded_seq.view(1, number_of_words, -1) #TODO this is old implementation
-        embedded_seq = torch.transpose(embedded_seq, 0, 1) #TODO this is new implementation #(1, number_of_words, 1000)
+        embedded_seq = torch.transpose(embedded_seq, 0, 1) #(1, number_of_words, 1000)
 
         rnn_output, state = self.lstm(embedded_seq, state)  #rnn_output shape: (1, number_of_words, 1000)
         last_output = rnn_output[:, -1, :] #(1, 1000)
