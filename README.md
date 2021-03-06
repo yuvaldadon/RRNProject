@@ -17,14 +17,16 @@ git clone https://github.com/yuvaldadon/RRNProject
 ```
 2. Setup the [VGPhraseCut Dataset](https://github.com/ChenyunWu/PhraseCutDataset), so that images are under:
 ```
-PhraseCutDataset/data/VGPhraseCut_v0/images
+RRNProject/PhraseCutDataset/data/VGPhraseCut_v0/images
 ```
 
 ## Usage
 
-1. Train the network using [train.ipynb](train.ipynb)
+Use the model via the notebooks, these contain many configurations in the top section.
 
-The notebook contains many configurations in the top section, notably:
+1. Train the network using [train.ipynb](train.ipynb) 
+
+General training configurations:
 ```
 - path = `../RRNProject/`
 - output_path = `../RRNProject/output/`
@@ -35,7 +37,9 @@ The notebook contains many configurations in the top section, notably:
 - opt.checkpoint = `../RRNProject/output/checkpoint.pth` # path to .pth to continue training
 ```
 
-2. Test the network using [test.ipynb](test.ipynb)
+2. Test the network using [test.ipynb](test.ipynb)  
+
+General testing configurations:
 ```
 opt.test_log_every = 50      # num of iterations to log test info
 opt.save_im_every = 20000    # num of iterations to save mask segmentation output
@@ -43,6 +47,7 @@ opt.checkpoint = '../RRNProject/output/checkpoint.pth'   # path to .pth to load 
 ```
 
 ## References
-This project is based on the paper [Referring Image Segmentation via Recurrent Refinement
+- [Referring Image Segmentation via Recurrent Refinement
 Networks](http://openaccess.thecvf.com/content_cvpr_2018/html/Li_Referring_Image_Segmentation_CVPR_2018_paper.html),
 CVPR 2018. 
+- [deeplab-pytorch]https://github.com/kazuto1011/deeplab-pytorch
