@@ -32,13 +32,13 @@ Use the model via the notebooks, these contain many configurations in the top se
 
 General training configurations:
 ```
-- path = `../RRNProject/`
-- output_path = `../RRNProject/output/`
+- path = '../RRNProject/'
+- output_path = '../RRNProject/output/'
 - opt.train_iter = 200000      # max iteration to train
 - opt.train_log_every = 300    # num of iterations to log training info
 - opt.checkpoint_every = 25000 # num of iterations to save checkpoint
 - opt.load_checkpoint = None   # path to .pth to continue training
-- opt.checkpoint = `../RRNProject/output/checkpoint.pth` # path to .pth to continue training
+- opt.checkpoint = '../RRNProject/output/checkpoint.pth' # path to .pth to continue training
 ```
 
 2. Test the network using [test.ipynb](test.ipynb)  
