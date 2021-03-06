@@ -6,7 +6,7 @@ Based on the original paper [Referring Image Segmentation via Recurrent Refineme
 Networks](http://openaccess.thecvf.com/content_cvpr_2018/html/Li_Referring_Image_Segmentation_CVPR_2018_paper.html),
 CVPR 2018. 
 <p align="center">
-  <img src="https://i.ibb.co/bb6MckQ/Untitled.png" width="47%"/>
+  <img src="https://i.ibb.co/bb6MckQ/Untitled.png" width="55%"/>
 </p>
 
 ## Setup
