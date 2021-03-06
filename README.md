@@ -19,6 +19,10 @@ git clone https://github.com/yuvaldadon/RRNProject
 ```
 RRNProject/PhraseCutDataset/data/VGPhraseCut_v0/images
 ```
+3. Download the [Pre-Trained Deeplab](https://github.com/kazuto1011/deeplab-pytorch/releases/download/v1.0/deeplabv2_resnet101_msc-vocaug-20000.pth) on Pascal-VOC in:
+```
+RRNProject/tools/deeplabv2_resnet101_msc-vocaug-20000.pth
+```
 
 ## Usage
 
