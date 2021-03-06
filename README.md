@@ -50,4 +50,4 @@ opt.checkpoint = '../RRNProject/output/checkpoint.pth'   # path to .pth to load 
 - [Referring Image Segmentation via Recurrent Refinement
 Networks](http://openaccess.thecvf.com/content_cvpr_2018/html/Li_Referring_Image_Segmentation_CVPR_2018_paper.html),
 CVPR 2018. 
-- [deeplab-pytorch]https://github.com/kazuto1011/deeplab-pytorch
+- [deeplab-pytorch](https://github.com/kazuto1011/deeplab-pytorch)
