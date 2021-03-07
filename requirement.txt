@@ -1,0 +1,7 @@
+torch==1.6.0
+torchvision==0.7.0
+numpy==1.19.2
+matplotlib==3.3.2
+tqdm==4.50.2
+Pillow==8.0.1
+pydensecrf==1.0rc3
