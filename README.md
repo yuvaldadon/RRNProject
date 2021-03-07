@@ -11,15 +11,17 @@ CVPR 2018.
 
 ## Setup
 
-1. Clone this repository
+1. Prepare packages according to [requirement.txt](requirement.txt)
+
+2. Clone this repository
 ```
 git clone https://github.com/yuvaldadon/RRNProject
 ```
-2. Setup the [VGPhraseCut Dataset](https://github.com/ChenyunWu/PhraseCutDataset), so that images are under:
+3. Setup the [VGPhraseCut Dataset](https://github.com/ChenyunWu/PhraseCutDataset), so that images are under:
 ```
 RRNProject/PhraseCutDataset/data/VGPhraseCut_v0/images
 ```
-3. Download the [Pre-Trained Deeplab](https://github.com/kazuto1011/deeplab-pytorch/releases/download/v1.0/deeplabv2_resnet101_msc-vocaug-20000.pth) on Pascal-VOC in:
+4. Download the [Pre-Trained Deeplab](https://github.com/kazuto1011/deeplab-pytorch/releases/download/v1.0/deeplabv2_resnet101_msc-vocaug-20000.pth) on Pascal-VOC and place in:
 ```
 RRNProject/tools/deeplabv2_resnet101_msc-vocaug-20000.pth
 ```
@@ -43,11 +45,13 @@ General training configurations:
 
 2. Test the network using [test.ipynb](test.ipynb)  
 
+Our [pre-trained model](https://drive.google.com/file/d/1vNxCRxv9FZjEqlbO56wpG3WMUfe_82a-/view?usp=sharing) can be used for immediate testing using the default settings.
+
 General testing configurations:
 ```
 opt.test_log_every = 50      # num of iterations to log test info
-opt.save_im_every = 20000    # num of iterations to save mask segmentation output
-opt.checkpoint = '../RRNProject/output/checkpoint.pth'   # path to .pth to load model
+opt.save_im_every = 500      # num of iterations to save mask segmentation output
+opt.checkpoint = '../RRNProject/output/checkpoint_100000.pth'   # path to .pth to load model
 ```
 
 ## References
