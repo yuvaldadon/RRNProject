@@ -1,6 +1,6 @@
 # Recurrent Refinement Networks Project
 
-This repo is the Pytorch implementation for Tel-Aviv University Deep Learning Project Recurrent Refinement Networks.  
+This repo is the Pytorch implementation for Tel-Aviv University Deep Learning Project [Recurrent Refinement Network](https://tinyurl.com/RRNPresentation).  
 The project handles the task of Refering Image Segmentation on the [VGPhraseCut](https://people.cs.umass.edu/~chenyun/publication/phrasecut/) databse.  
 Based on the original paper [Referring Image Segmentation via Recurrent Refinement
 Networks](http://openaccess.thecvf.com/content_cvpr_2018/html/Li_Referring_Image_Segmentation_CVPR_2018_paper.html),
